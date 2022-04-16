@@ -4,9 +4,6 @@
 {% block title %}详情页面{% endblock %}
 
 {% block content %}
-<link href="{% static 'mdeditor/css/editormd.min.css' %}" rel="stylesheet">
-<link href="{% static 'mdeditor/css/editormd.preview.css' %}" rel="stylesheet">
-<link rel="stylesheet" href="{% static 'code.css' %}">
 
     <div id="main">
         <article class="article article-type-article">
@@ -15,7 +12,7 @@
                 <time>{{ article_obj.add_time|date:'Y-m-d H:i' }}</time>
               </a>
               <div class="article-category">
-                <a class="article-category-link" href="#" target="_blank">{{ article_obj.category.cname }}</a>
+                <a class="article-category-link" href="#" target="_blank">{{ article_obj.category.name }}</a>
               </div>
             </div>
             <div class="article-inner">

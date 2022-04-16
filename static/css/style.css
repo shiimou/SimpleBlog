@@ -673,7 +673,12 @@ a.article-title:hover {
   margin-top: 1.6em;
   margin-bottom: 1.6em;
 }
-.article-entry img,
+.article-entry img{
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
 .article-entry video {
   max-width: 100%;
   height: auto;
@@ -1201,7 +1206,7 @@ a.article-title:hover {
 .article-entry pre,
 .article-entry .highlight {
   background: #272822;
-  margin: 0 -20px;
+  margin: 8 -20px;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
@@ -1220,6 +1225,7 @@ a.article-title:hover {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
+  max-width: 80%;
   background: #f0f0f0;
   text-shadow: 0 1px #fff;
   font-size: 0.85em;
@@ -1231,6 +1237,7 @@ a.article-title:hover {
 .article-entry pre code {
   background: none;
   text-shadow: none;
+  display: block;
   padding: 0;
   border: none;
 }
@@ -1318,6 +1325,7 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta a:hover {
   text-decoration: underline;
 }
+
 pre .comment,
 pre .preprocessor {
   color: #75715e;

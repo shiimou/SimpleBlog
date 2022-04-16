@@ -145,7 +145,7 @@
         onscroll             : function() {},
         onpreviewscroll      : function() {},
         
-        imageUpload          : false,
+        imageUpload          : True,
         imageFormats         : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
         imageUploadURL       : "",
         crossDomainUpload    : false,

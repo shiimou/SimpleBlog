@@ -1,8 +1,6 @@
 import math
 
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator  
+from django.shortcuts import render 
 from django.core.paginator import Paginator
 from django.views.generic import View 
 from django.db.models import Count
@@ -91,3 +89,4 @@ def getSidebarInfo(request):
     r_recent_article = Article.objects.all().order_by('add_time')
 
     return {'r_cate_article':r_cate_article,'r_file_article':r_file_article,'r_recent_article':r_recent_article}
+    
