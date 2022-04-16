@@ -1,0 +1,57 @@
+<aside id="sidebar">
+  <!--分类-->
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list">
+        {% for ra in r_cate_article %}
+            <li class="category-list-item">
+              <a class="category-list-link" href="/category/{{ ra.category }}">{{ ra.category__name }}</a>
+              <span class="category-list-count">{{ ra.c }}</span>
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!--归档-->
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list">
+        {% for rf in r_file_article %}
+            <li class="archive-list-item">
+              <a class="archive-list-link" href="/archive/{{ rf.0 }}/{{ rf.1 }}">{{ rf.0}}年{{ rf.1 }}月</a>
+              <span class="archive-list-count">{{ rf.2 }}</span>
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!--近期文章-->
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        {% for rr in r_recent_article %}
+            <li>
+                <a href="/article/{{ rr.id }}" target="_blank">{{ rr.title|truncatechars:'10' }}</a>
+                <!--标题最长只显示10个字符-->
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!--功能-->
+  <div class="widget-wrap">
+    <h3 class="widget-title">功能</h3>
+    <div class="widget">
+      <ul>
+        <li><a href="/admin/" rel="nofollow">管理站点</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>

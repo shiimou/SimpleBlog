@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load blog_tags %}
+{% block title %}详情页面{% endblock %}
+
+{% block content %}
+<link href="{% static 'mdeditor/css/editormd.min.css' %}" rel="stylesheet">
+<link href="{% static 'mdeditor/css/editormd.preview.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'code.css' %}">
+
+    <div id="main">
+        <article class="article article-type-article">
+            <div class="article-meta">
+              <a class="article-date">
+                <time>{{ article_obj.add_time|date:'Y-m-d H:i' }}</time>
+              </a>
+              <div class="article-category">
+                <a class="article-category-link" href="#" target="_blank">{{ article_obj.category.cname }}</a>
+              </div>
+            </div>
+            <div class="article-inner">
+                <header class="article-header">
+                    <h1 itemprop="name">
+                        <a class="article-title">{{ article_obj.title }}</a>
+                        
+                    </h1>
+                </header>
+                <div class="article-entry" itemprop="articleBody">
+                    {% if article_obj.desc %}
+                    <hr>
+                    {% endif %}
+                    {{ article_obj.desc }}
+                    <hr>
+                    {{ article_obj.content|custom_markdown}}
+                    <br></br>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+
+
+{% endblock %}

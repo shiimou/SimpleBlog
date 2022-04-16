@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}搜索结果页面{% endblock %}
+
+{% block content %}
+
+    <div id="main">
+
+        <div class="archives">
+            {% if query %}
+            {% for cp in page.object_list %}
+                <article class="archive-article archive-type-article">
+                  <div class="archive-article-inner">
+                    <header class="archive-article-header">
+                    <a href="#" class="archive-article-date">
+                         <time>{{ cp.object.created|date:'Y-m' }}</time>
+                    </a>
+
+                     <h1 itemprop="name">
+                          <a class="archive-article-title" target="_blank" href="/article/{{ cp.object.id }}">{{ cp.object.title }}</a>
+                     </h1>
+                     </header>
+                  </div>
+                </article>
+            {% empty %}
+                暂无记录
+            {% endfor %}
+
+            {% endif %}
+
+
+
+
+
+
+        </div>
+    </div>
+
+{% endblock %}

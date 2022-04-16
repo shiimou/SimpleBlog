@@ -1,0 +1,9 @@
+django==3.2.5
+django_haystack==3.1.1
+django-mdeditor==0.1.18
+jieba==0.42.1
+mistune==0.8.4
+Pygments==2.10.0
+six==1.16.0
+Whoosh==2.7.4
+pillow==9.0.1

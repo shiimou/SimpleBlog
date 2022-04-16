@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}首页{% endblock %}
+
+
+{% block content %}
+
+    <div id="main">
+
+        {% for article in ArticleList %}
+            <article class="article article-type-article">
+            <div class="article-meta">
+                <a class="article-date">
+                    <time>{{ article.add_time|date:'Y-m-d H:i' }}</time>
+                </a>
+                <div class="article-category">
+                    <a class="article-category-link" href="#" target="_blank">{{ article.category.name }}</a>
+                </div>
+            </div>
+            <div class="article-inner">
+                <header class="article-header">
+                    <h1 itemprop="name">
+                        <a class="article-title" href="#" target="_blank">{{ article.title }}</a>
+                    </h1>
+                </header>
+                <div class="article-entry" itemprop="articleBody">
+                    <!-- <h2>摘要</h2> -->
+                    <hr>
+                    {{ article.desc }}
+
+                    <p class="article-more-link">
+                        <a href="/article/{{ article.id }}" target="_blank">阅读全文</a>
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+
+                        {% for tag in article.tag.all %}
+                            <li class="article-tag-list-item">
+                                <a class="article-tag-list-link" href="#">{{ tag.name }}</a>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </footer>
+            </div>
+        </article>
+        {% endfor %}
+
+        {% if ArticleList  %}
+        <nav id="page-nav">
+
+                {% if ArticleList.has_previous %}
+                    <a class="extend prev" rel="next" href="/page/{{ ArticleList.previous_page_number }}">« Prev</a>
+                {% endif %}
+
+                {% for page in page_list %}
+                    {% if currentNum == page %}
+                        <span class="page-number current">{{ page }}</span>
+                    {% else %}
+                        <a class="page-number" href="/page/{{ page }}">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if ArticleList.has_next %}
+                    <a class="extend next" rel="next" href="/page/{{ ArticleList.next_page_number }}">Next »</a>
+                {% endif %}
+        </nav>
+        {% else %}
+        暂无文章
+        {% endif %}
+
+    </div>
+
+{% endblock %}
