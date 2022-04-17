@@ -58,7 +58,11 @@ python manage.py createsuperuser
 
  http://127.0.0.1:8000/admin 进入admin页面，添加文章。
  
+### 前台样式 
 ![image.png](https://s2.loli.net/2022/04/16/ka4URdznYVj8Ewp.png)
+
+### 鸣谢
+https://github.com/liangliangyy/DjangoBlog
 
 
 
