@@ -43,7 +43,7 @@ class Article(BaseModel):
     title = models.CharField(max_length=200,unique=True,verbose_name='标题')
     desc = models.CharField(max_length=200,verbose_name='简介', blank=True)
     content = MDTextField(verbose_name='内容')
-    category = models.ForeignKey(Category,verbose_name='所属类别',on_delete=models.CASCADE, null=True, blank=True)
+    category = models.ForeignKey(Category,verbose_name='所属类别',on_delete=models.CASCADE)
     tag = models.ManyToManyField(Tag,verbose_name='所属标签', blank=True)
 
     def __str__(self):
