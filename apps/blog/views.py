@@ -1,4 +1,5 @@
 import math
+import os
 
 from django.shortcuts import render 
 from django.core.paginator import Paginator
@@ -6,7 +7,6 @@ from django.views.generic import View
 from django.db.models import Count
 
 from blog.models import *
-
 
 # Create your views here.
 class IndexView(View):

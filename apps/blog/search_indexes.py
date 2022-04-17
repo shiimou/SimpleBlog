@@ -5,8 +5,9 @@ from blog.models import *
 class ArticleIndex(indexes.SearchIndex,indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
-    #给title,content设置索引
+    #给title,desc,content设置索引
     title = indexes.NgramField(model_attr='title')
+    desc = indexes.NgramField(model_attr='desc')
     content = indexes.NgramField(model_attr='content')
 
     def get_model(self):
